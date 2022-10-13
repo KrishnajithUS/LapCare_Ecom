@@ -222,17 +222,18 @@
               </div>
             </div>
           </div>
-          <div class='container pb-4'>
-          <div class="row">
+          <div class='container-fluid pb-4'>
+            <span><h2 >Sales Details</h2></span>
+          <div class="d-flex flex-row justify-content-around">
           
-            <div class="col-md-6 ">
-              <span><h2 >Sales Details</h2></span>
-            </div>
-            <div class="col-md-3" style="">
+            
+             
+          
+            <div >
               <a style="height: 3rem;"href="{% url 'sales-csv'%}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Export to CSV</a>
             </div>
-            <div class="col-md-3 ">
-              <a href="{% url 'sales-pdf'%}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Export to PDF</a>
+            <div >
+              <a style="height: 3rem;"href="{% url 'sales-pdf'%}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Export to PDF</a>
             </div>
           </div>
           </div>

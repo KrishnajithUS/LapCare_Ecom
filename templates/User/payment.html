@@ -48,7 +48,7 @@
                     <tr class="small text-uppercase">
                       <th scope="col">Product</th>
                       <th scope="col" width="120">Quantity</th>
-                      <th scope="col" width="120">Discount(%)</th>
+                   
                       <th scope="col" width="120">Price</th>
     
                     </tr>
@@ -76,10 +76,7 @@
                         <!-- col.// -->
                         <label for="">{{cart_item.quantity}}</label>
                       </td>
-                      <td>
-                        <!-- col.// -->
-                        <label for="">{{total_discount}}</label>
-                      </td>
+                    
                       <td>
                         <div class="price-wrap">
                           <var class="price">$ {{ cart_item.sub_total }}</var>
@@ -109,6 +106,10 @@
                   <dt  class="text-center">Tax:</dt>
                   <dd  class="text-center"> $ {{tax}}</dd>
                 </dl>
+                <dl class="dlist-align">
+                  <dt  class="text-center">Total discount</dt>
+                  <dd  class="text-center"> {{total_discount}} </dd>
+                </dl>
                
                 <dl class="dlist-align">
                   <dt  class="text-center">Grand Total:</dt>
@@ -118,28 +119,33 @@
                 {% comment %} <p class="text-center mb-3">
                   <img src="{% static './images/misc/payments.png' %}" height="26">
                 </p> {% endcomment %}
-                <p style="padding-left:5rem;" >
+                <div class="d-flex justify-content-center  pb-2">
+                  <div>
                   <img class="" width="45px"
                   src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
                   alt="Visa" />
+                </div>
+                <div>
                 <img class="" width="45px"
                   src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
                   alt="American Express" />
+                </div>
+                <div>
                 <img class="" width="45px"
                   src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
                   alt="Mastercard" />
                
-                  
-                </p>
+                </div>
+                </div>
                
-                <div id="paypal-button-container">
+                <div id="paypal-button-container" >
                   <!-- PayPal Button Will Load -->
                 
                 </div>
                 <div>
                 <a
                 href="{% url 'cod_payment' order.order_number%}"style="width:100%;" h-50 type="button" class="btn btn-outline-secondary">Cash On Delivery</a>
-                <a  style="width:100%;margin-top: 1rem;"h-50 type="button" class="btn btn-outline-secondary ">Rasopay</a>
+              
                 
               </div>
               </div> <!-- card-body.// -->
@@ -186,6 +192,7 @@ paypal.Buttons({
         color:  'blue',
         shape:  'rect',
         label:  'pay',
+        width:100,
         height: 40
     },
     // Set up the transaction

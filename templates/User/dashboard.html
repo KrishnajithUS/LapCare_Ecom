@@ -2,8 +2,10 @@
 {% load static %}
 {% block content %}
 <section class="section-conten padding-y bg  pt-4 mt-4" >
+	{% if messages %}
 	{% for message in messages %}
 	<div id="message" class="container">
+		
 	<div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %} role="alert">
 	  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
 		{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Error: {% endif %}
@@ -11,16 +13,17 @@
 	</div>
 	</div>
 	{% endfor %}
-    <div class="container  mt-4 pt-4 pb-5" style="background:#1e1e1e;">
+	{% endif %}
+    <div class="container-fluid  mt-4 pt-4 pb-5" style="background:#1e1e1e;">
         <div class="row">
       {% include "User/includes/dashboard_sidebar.html"%}
-	  {% if messages %}
+	 
 
 	 
   
-  {% endif %}
   
-	<main class="col-md-9">
+  
+	<main class="col-lg-9 col-md-12 ">
 		<article class="card">
 		<header class="card-header">
 			<strong class="d-inline-block mr-3">Logged In As</strong>

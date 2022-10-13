@@ -59,7 +59,7 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
    
   
-    <div class="container marketing text-center ">
+    <div class="container-fluid p-2 marketing text-center ">
 
      
      <h1 style=" text-decoration: underline;">Our Products<h1>
@@ -67,8 +67,8 @@
       <div class="row pt-4">
         {% for product in data %}
        
-        <div class="col-lg-4 col-md-6 ">
-            <div class="w-100 h-100 pt-3 pb-0" class="card card-product-grid" style="border-radius:5%;background-color:#aaaaaa42;">
+        <div class="col-lg-4 col-md-12 ">
+            <div class=" pb-0" class="card card-product-grid" style="border-radius:5%;background-color:#aaaaaa42;">
              
                 <a href="{{product.get_url}}" class="img-wrap"> <img style="border-radius:10%;height:10rem;width:10rem;" src="{{ product.images.url}}"> </a>
                 <div class="d-flex flex-row align-items-center mb-1">
