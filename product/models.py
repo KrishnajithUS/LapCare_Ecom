@@ -1,6 +1,6 @@
 
 from django.utils import timezone
-from tkinter import CASCADE
+
 from django.db import models
 import uuid
 from django.apps import apps

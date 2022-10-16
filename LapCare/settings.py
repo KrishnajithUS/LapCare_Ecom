@@ -28,7 +28,7 @@ SECRET_KEY =env('SECRET_KEY')#to get the value of secret key fromn .env
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG',default=True,cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'Home',
     'cart',
     'order',
+     'LapCare',
     'rest_framework',
  
    
@@ -73,6 +74,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR,'templates')],
+    
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

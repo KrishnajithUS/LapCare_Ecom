@@ -1,4 +1,4 @@
-from tkinter.tix import Select
+
 from .models import Products
 from django.forms import ModelForm,Select, Textarea,TextInput,CheckboxInput, NumberInput,ClearableFileInput,ModelChoiceField
 

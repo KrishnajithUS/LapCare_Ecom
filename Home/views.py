@@ -24,4 +24,4 @@ def home(request):
         'brand':brandnew,
         "offer":get
     }
-    return render(request,"User\home.html",context)
+    return render(request,"User/home.html",context)
