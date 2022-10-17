@@ -105,9 +105,9 @@ AUTH_USER_MODEL = 'accounts.Account'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mylapcaredb',
+        'NAME': 'LapCare',
         'USER':'krishnajithus',
-        'PASSWORD':'krishna123',
+        'PASSWORD':'krishnajithus',
         'HOST':'database-1.cdmdzkq9vsnv.us-west-2.rds.amazonaws.com',
         'PORT':'5432',
         
