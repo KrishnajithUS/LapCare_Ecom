@@ -330,7 +330,7 @@ def change_password(request):
             messages.error(request, "Password does not match")
             return redirect("change_password")
 
-    return render(request, "user/change_password.html")
+    return render(request, "User/change_password.html")
 
 
 @login_required(login_url="userlogin")
