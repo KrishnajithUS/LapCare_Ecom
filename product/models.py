@@ -87,10 +87,9 @@ class Products(models.Model):
             return  self.price*(self.offer_product/100)
                 
 
-        elif self.category.offerstatus == True and self.offerstatuspro == False:
+        else :
             return self.price *(self.category.offer/100)
-        else:
-            return "No offer available"
+      
    
 
 

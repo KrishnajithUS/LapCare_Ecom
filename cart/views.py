@@ -221,8 +221,7 @@ def delete_cart(request, product_id, cart_item_id):
 def cart(request, total=0, quantity=0, cart_items=None):
     try:
 
-        tax = 0
-        grand_total = 0
+
         if request.user.is_authenticated:
 
             cart_items = CartItem.objects.filter(user=request.user, is_active=True)
@@ -263,6 +262,7 @@ def cart(request, total=0, quantity=0, cart_items=None):
             # id of the browser
             cart_items = CartItem.objects.filter(cart=cart, is_active=True)
         discount_list = []
+        grand_total = 0
         total_list = []
         total = 0
         for cart_item in cart_items:

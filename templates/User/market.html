@@ -49,7 +49,27 @@
                 </div> <!-- card-body.// -->
             </div>
         </article> <!-- filter-group  .// -->
-      
+        <article  id="bg"class="filter-group">
+            <header class="card-header">
+                <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+                    <i class="icon-control fa fa-chevron-down"></i>
+                    <h6 class="title">Brands</h6>
+                </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse_1" id="bg">
+                <div class="card-body">
+                    
+                    <ul  id="bg" style="list-style:none;"class="list-menu pr-4">
+                    
+                        {% for brand in link %}
+                    <li  id="bg"><a href="{{brand.get_url_brand}}">{{brand.brand_name}} </a></li>
+                        {% endfor %}
+                    </ul>
+    
+                </div> <!-- card-body.// -->
+            </div>
+        </article> <!-- filter-group  .// -->
+            
        
     </div> <!-- card.// -->
     

@@ -2,6 +2,7 @@
 from unicodedata import category
 from django.shortcuts import render, get_object_or_404,redirect
 from .models import Products
+from brand.models import brand as brand2
 from category.models import category as category2
 from cart.views import _cart_id
 from cart.models import CartItem
@@ -10,7 +11,7 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 
 # Create your views here.
-def market(request, category_slug=None):
+def market(request, category_slug=None,brand_slug=None):
     categories = None
     data = None
     if category_slug != None:
@@ -20,6 +21,13 @@ def market(request, category_slug=None):
             .filter(category=categories, available=True)
             .order_by("id")
         )
+        paginator = Paginator(data, 3)
+        page = request.GET.get("page")
+        paged_products = paginator.get_page(page)  #
+        product_count = data.count()
+    elif brand_slug != None:
+        brand = get_object_or_404(brand2, slug=brand_slug)
+        data = Products.objects.all().filter(newbrand=brand, available=True).order_by("id")
         paginator = Paginator(data, 3)
         page = request.GET.get("page")
         paged_products = paginator.get_page(page)  #

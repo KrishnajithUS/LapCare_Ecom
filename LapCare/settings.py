@@ -84,6 +84,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',#tellin the template that we are usign context processors
                 'category.context_processors.menu_links',
+                 'brand.context_processors.menu_links_brand',
                 'cart.context_processors.counter',
             ],
         },
